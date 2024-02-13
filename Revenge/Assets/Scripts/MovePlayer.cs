@@ -28,20 +28,20 @@ public class MovePlayer : MonoBehaviour
         DoubleJump = false;
         if (Input .GetKeyDown(KeyCode.Space)&&Grounded) 
         { 
-        rigid.velocity =new Vector2 (0,Jump);
+        rigid.velocity =new Vector2 (rigid.velocity.y, Jump);
         }
         if (Input.GetKeyDown(KeyCode.Space) &&! DoubleJump &&! Grounded)
         {
-            rigid.velocity = new Vector2 (0, Jump);
+            rigid.velocity = new Vector2 (rigid.velocity.y, Jump);
             DoubleJump = true;
         }
         if (Input .GetKey(KeyCode.D ))
         {
-            rigid.velocity=new Vector2 (Speed ,0);
+            rigid.velocity=new Vector2 (Speed , rigid.velocity.y);
         }
         if (Input.GetKey(KeyCode.A))
         {
-            rigid.velocity = new Vector2 (-Speed , 0);
+            rigid.velocity = new Vector2 (-Speed ,rigid.velocity.x );
         }
     }
 }
